@@ -84,9 +84,48 @@ uv run --frozen main.py -m model_name /path/to/your/project
 use `requirements-ipex.txt` instead of `requirements.txt`.
 add `--ipex` to the command line.
 
+#### Usage Help
+```
+usage: RepoExplainer [-h] [--extra-prompt EXTRA_PROMPT] [--ipex] [-t TEMPERATURE] -m MODEL [-e EXCLUDE]
+                     [--prompt-template PROMPT_TEMPLATE] [--system SYSTEM] [--max-retries MAX_RETRIES] [--max-tokens MAX_TOKENS] [-k K]
+                     [--chunk-overlap CHUNK_OVERLAP] [--chunk-size CHUNK_SIZE] [--suffixes SUFFIXES] [-l LIMIT]
+                     [--embeddings-model EMBEDDINGS_MODEL]
+                     [path]
+
+positional arguments:
+  path                  path to you project
+
+options:
+  -h, --help            show this help message and exit
+  --extra-prompt EXTRA_PROMPT
+                        extra prompt to add to the prompt
+  --ipex                use ipex
+  -t TEMPERATURE, --temperature TEMPERATURE, --temp TEMPERATURE
+                        default: 0.2
+  -m MODEL, --model MODEL
+  -e EXCLUDE, --exclude EXCLUDE
+                        exclude files matching the regex
+  --prompt-template PROMPT_TEMPLATE
+  --system SYSTEM
+  --max-retries MAX_RETRIES
+  --max-tokens MAX_TOKENS
+  -k K                  number of similar documents to retrieve. default: 5
+  --chunk-overlap CHUNK_OVERLAP
+                        The size of the overlap between the split codes. Usually set to 10%-20% of chunk-size. default: 20
+  --chunk-size CHUNK_SIZE
+                        Split the code into specified sizes. Larger sizes mean more information to retrieve and require greater
+                        context. default: 200
+  --suffixes SUFFIXES   file extensions to include. default includes a set of common programming languages; if this option is set, the
+                        defaults *will not* be included.
+  -l LIMIT, --limit LIMIT
+                        limit requests per second. default: 3
+  --embeddings-model EMBEDDINGS_MODEL
+```
+
 ### Speed
 Usually, there are two speed bottlenecks: embedding and text generation.
 
 The former can use GPU acceleration. The latter is usually limited by the rate limit of the third-party API you use.
 
 Network io is not a problem, because API calls are asynchronous and concurrent.
+
