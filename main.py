@@ -169,7 +169,7 @@ async def generate_explanations(
             .strip()
             .rpartition("\n")
         )
-        list_page.write("`%s`: %s\n" % (path, summary))
+        list_page.write("`%s`: %s\n\n" % (path, summary))
 
         md = out_dir.joinpath(path.relative_to(base_path))
         md.parent.mkdir(parents=True, exist_ok=True)
