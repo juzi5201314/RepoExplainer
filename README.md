@@ -24,6 +24,11 @@ On QwQ 32b, the number of tokens used is:
 input: `1,190,991 tokens (1.19M)`
 output: `578,622 tokens (0.57M)`
 
+On DeepSeek R1, the number of tokens used is:
+input: `1,448,047 tokens (1.44M)`
+output: `445,289 tokens (0.44M)`
+
+Token consumption is not fixed, even for the same file, different models, temperatures, and even each call will have differences.
 
 ### Todo
 * Provides improved default prompts.
