@@ -216,7 +216,7 @@ async def main():
         "--chunk-overlap",
         type=int,
         default=20,
-        help="The size of the overlap between the split codes. Usually set to 10%-20% of chunk-size. default: 20",
+        help="The size of the overlap between the split codes. Usually set to 10%%-20%% of chunk-size. default: 20",
     )
     args_parser.add_argument(
         "--chunk-size",
