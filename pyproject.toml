@@ -23,10 +23,3 @@ ipex = [
     "ipex-llm[xpu-2-6]==2.2.0b20250303",
     "sentence-transformers>=3.4.1",
 ]
-
-[tool.uv.sources]
-torch = { index = "torch" }
-
-[[tool.uv.index]]
-name = "torch"
-url = "https://download.pytorch.org/whl/test/xpu"

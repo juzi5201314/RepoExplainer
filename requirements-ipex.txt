@@ -27,6 +27,8 @@ certifi==2025.1.31
     #   requests
 charset-normalizer==3.4.1
     # via requests
+colorama==0.4.6
+    # via tqdm
 dataclasses-json==0.6.7
     # via langchain-community
 distro==1.9.0
@@ -100,8 +102,6 @@ intel-openmp==2025.0.2
     # via
     #   dpcpp-cpp-rt
     #   ipex-llm
-intel-pti==0.10.0
-    # via torch
 intel-sycl-rt==2025.0.2
     # via
     #   dpcpp-cpp-rt
@@ -158,7 +158,7 @@ langsmith==0.3.12
     #   langchain
     #   langchain-community
     #   langchain-core
-markupsafe==3.0.2
+markupsafe==3.0.1
     # via jinja2
 marshmallow==3.26.1
     # via dataclasses-json
@@ -206,7 +206,6 @@ packaging==24.2
     #   langchain-core
     #   langsmith
     #   marshmallow
-    #   pytorch-triton-xpu
     #   transformers
 pillow==11.1.0
     # via
@@ -237,8 +236,6 @@ python-dotenv==1.0.1
     # via
     #   dotenv
     #   pydantic-settings
-pytorch-triton-xpu==3.2.0
-    # via torch
 pyyaml==6.0.2
     # via
     #   accelerate
