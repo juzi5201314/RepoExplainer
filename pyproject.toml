@@ -1,0 +1,32 @@
+[project]
+name = "repo-explainer"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "dotenv>=0.9.9",
+    "faiss-cpu>=1.10.0",
+    "langchain-community>=0.3.18",
+    "langchain-core>=0.3.40",
+    "langchain-huggingface>=0.1.2",
+    "langchain-text-splitters>=0.3.6",
+    "langchain[openai]>=0.3.19",
+    "langgraph>=0.3.2",
+    "tree-sitter-languages>=1.8.0,<2",
+    "tree-sitter>=0.20.2,<0.21",
+    "asyncio>=3.4.3",
+]
+
+[project.optional-dependencies]
+ipex = [
+    "ipex-llm[xpu-2-6]==2.2.0b20250303",
+    "sentence-transformers>=3.4.1",
+]
+
+[tool.uv.sources]
+torch = { index = "torch" }
+
+[[tool.uv.index]]
+name = "torch"
+url = "https://download.pytorch.org/whl/test/xpu"
